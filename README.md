@@ -21,7 +21,7 @@
 - Remove/add/edit an item from the catalog by restaurants
 - Realtime people count at restaurant
 
-Your inovation :  N/A
+Inovation at the moment :  N/A
 
 ### Tech Stack :
 
