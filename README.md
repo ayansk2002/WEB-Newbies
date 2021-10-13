@@ -1,11 +1,11 @@
 # WEB-Newbies
 ## Smart Restaurant
 
-### Team Name : [WEB Newbies](https://github.com/kitashi-kun/WEB-Newbies)
+### Team Name : [WEB Newbies](https://github.com/Kitashi14/WEB-Newbies)
 
 ### Team Members Name : 
 
-- [Rishav Raj](https://github.com/kitashi-kun) - 20205122   ([kitashi-kun](https://github.com/kitashi-kun))
+- [Rishav Raj](https://github.com/Kitashi14) - 20205122   ([Kitashi14](https://github.com/Kitashi14))
 - [Aditya Vikram Singh](https://github.com/God-of-Calamity) - 20205013    ([God-of-Calamity](https://github.com/God-of-Calamity))
 - [Samarjeet Patel](https://github.com/samar-jeet) - 20205133    ([samar-jeet](https://github.com/samar-jeet))
 - [Akash Kumar Gupta](https://github.com/akash977) - 20205019    ([akash977](https://github.com/akash977))
