@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Food Item Form</title>
+    <link rel="stylesheet" href="/css/basic.css">
+</head>
+<style>
+    #heading{
+        width: 30vw;
+        height: 10vh;
+        position: relative;
+        top: 3.2vh;
+        left: 3vw;
+    }
+
+    #span-p2-one{
+        display: inline-block;
+        width: 25vw;
+        height: 8vh;
+        font-family: sans-serif;
+        font-size: 1.4vw;
+        color: red;
+    }
+
+    #heading2{
+        text-align: center;
+        color: red;
+        font-family: sans-serif;
+    }
+
+    #add_item{
+        margin:0 auto;
+        width: 26vw;
+        height: 58vh;
+        background-color: #ffe7da;
+    }
+
+    #add_item{
+        overflow-y: scroll;
+    }
+
+    #add_item::-webkit-scrollbar{
+        width: 1vh;
+    }
+
+    #add_item::-webkit-scrollbar-track{
+        background-color: #ffe7da;
+        border-radius: 18vh;
+    }
+
+    #add_item::-webkit-scrollbar-thumb{
+        background-color: red;
+        border-radius: 18vh;
+    }
+
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+
+    input{
+        display: block;
+        outline: none;
+        margin: 0 auto;
+        border: 0.2vw solid silver;
+        width: 15vw;
+        
+    }
+
+    #add_button{
+        background-color: red;
+        color: white;
+        font-family: sans-serif;
+        width: 6vw;
+        height: 5vh;
+        margin: 0.8vh auto;
+        text-align: center;
+    }
+
+    #span_add{
+        display: inline-block;
+        margin-top: 0.8vh;
+        font-size: 3.1vh;
+    }
+
+</style>
+
+<body>
+    <div id="header">
+        <div id="logo"></div>
+        <h1 id ="website-name">Website</h3>
+        <h1 id="customer-name">Hello Mr. Name</h1>
+    </div>
+
+    <div id="main">
+        <div class="buttons grp1"><span class = "span-button-one"><a>Home</a></span></div>
+        <div class="buttons grp1"><span class = "span-button-one"><a>About</a></span></div>
+        <div class="buttons grp2"><span class = "span-button-one"><a>Profile</a></span></div>
+        <div class="buttons grp2"><span class = "span-button-one"><a>Logout</a></span></div>
+        <hr id = "first-break">
+        <div id="heading">
+            <span id="span-p2-one"><span>Restaurent's Name</span> / <small>Add</small></span>
+        </div>
+        <h1 id="heading2">Add New Food</h1>
+        <div id = "add_item">
+            <form>
+                <img src="/images/form_image.PNG" alt="form_image">
+                <input type="text" placeholder="Name of Food" name="food_name" id="name" required autofocus>
+                <br>
+                <input type="text" placeholder="Price" name="price" id="price" required>
+                <br>
+                <input type="text" placeholder="Time" name="time" id="time" required>
+                <br>
+                <input type="text" placeholder="Ingredients" name="ingredients" id="ingredients" required>
+                <br>
+                <input type="text" placeholder="Method" name="method" id="method" required>
+                <br>
+                <input type="text" placeholder="Tags" name="tags" id="tags" required>
+                <br>
+                <input type="text" placeholder="Image-Location" name="image-location" id="img-src" required>
+                <a href="/foodCatalog">
+                    <div id="add_button">
+                        <span id="span_add">ADD</span>
+                    </div>
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p id = "first-para"><span id="span-one">Website Name</span></p>
+        <p id = "second-para">About</p>
+        <hr id = "second-break">
+        <p id="third-para"><span>Copyright &copy; website name. All rights reserved</span></p>
+    </div>
+    <script src="/js/add_food_item_form.js"></script>
+</body>
+</html>

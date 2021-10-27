@@ -1,0 +1,136 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+#header {
+  width: 100%;
+  height: 8vh;
+  background-image: url(../images/header.PNG);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 9vh;
+}
+
+#logo {
+  width: 5vw;
+  height: 6vh;
+  background-color: whitesmoke;
+  position: relative;
+  top: 8%;
+  left: 1%;
+  display: inline-block;
+}
+
+#website-name {
+  color: whitesmoke;
+  display: inline-block;
+  position: relative;
+  left: 1.5%;
+  bottom: 10%;
+  font-size: 2vw;
+  font-family: sans-serif;
+}
+
+#customer-name {
+  color: whitesmoke;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 2vw;
+  position: relative;
+  left: 65%;
+}
+
+#main {
+  background-image: url(../images/main.png);
+  background-repeat: no-repeat;
+  background-size: 100% 80vh;
+  width: 100%;
+  height: 80vh;
+}
+
+#footer {
+  background-image: url(../images/footer.PNG);
+  background-repeat: no-repeat;
+  background-size: 100% 12vh;
+  width: 100%;
+  height: 12vh;
+}
+
+#first-para {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.2vw;
+  color: white;
+  margin-left: 2vw;
+}
+
+#span-one {
+  display: inline-block;
+  margin-top: 1vh;
+}
+
+#second-para {
+  text-align: right;
+  font-family: sans-serif;
+  font-size: 1.2vw;
+  color: white;
+  margin-right: 1.8vw;
+}
+
+#second-break {
+  border: 0.1vh solid white;
+  width: 98vw;
+  position: relative;
+  left: 1.1%;
+}
+
+#third-para {
+  font-family: sans-serif;
+  color: white;
+  text-align: right;
+  font-size: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vh;
+}
+
+.span-button-one {
+  display: inline-block;
+  width: 4vw;
+  height: 3vh;
+  margin-top: 0.4vh;
+  margin-left: 1vw;
+}
+
+.buttons {
+  display: inline-block;
+  width: 5%;
+  height: 4vh;
+  border-radius: 0.5em;
+}
+
+.buttons:hover {
+  background-color: red;
+  color: white;
+}
+
+.grp1 {
+  position: relative;
+  top: 1.5vh;
+  left: 3vw;
+  margin-left: 1%;
+}
+
+.grp2 {
+  position: relative;
+  top: 1.5vh;
+  left: 70vw;
+  margin-left: 1%;
+}
+
+#first-break {
+  border: 0.1vh solid red;
+  width: 93vw;
+  position: relative;
+  top: 1em;
+  left: 3em;
+}
