@@ -100,6 +100,7 @@ label{
     color: red;
     transition: 0.25s;
 }
+
 .box input[type = "email"]:focus{
     width: 20vw;
     border-color: red;
@@ -133,10 +134,14 @@ a{
     text-decoration: none;
 }
 
-b{
+span{
     font-family: Calibri;
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
     color: rgba(87, 87, 87, 0.83);
+}
+
+.hidden{
+    display: none;
 }

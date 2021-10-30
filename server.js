@@ -61,9 +61,7 @@ server.get('/test', function(request, response){
     response.render(__dirname + '/views/test');
 })
 
-server.get('/success',function(request, response){
-    response.render(__dirname + '/views/signupSuccess');    
-});
+
 
 server.post('/signup',function(request,response){
     const name = request.body.name;
@@ -146,6 +144,16 @@ server.get('/getFoodData', function(request, response){
 })
 
 
+//page checking paths
+server.get('/success',function(request, response){
+    response.render(__dirname + '/views/signupSuccess');    
+});
+
+server.get('/add_restaurant',function(request, response){
+    response.render(__dirname + '/views/add_restaurant');    
+});
+
+
 
 
 // Starting the server at port 3000
@@ -154,3 +162,6 @@ server.listen(3000, function(){
 });
 
 // Modification ---> restaurent wise count and numberOfTimesOrdered
+
+
+
