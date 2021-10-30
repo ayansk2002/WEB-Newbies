@@ -5,8 +5,9 @@ let time = 0;
 const addCustomer = function(username, email, password, db, callback){
     db.collection('users').insertOne({
         username: username,
-        password: password,
         email: email,
+        password: password, 
+        type : "customer"
     }, function(error, result){
         if(error){
             console.log("Unable to add User");
@@ -21,6 +22,30 @@ const addCustomer = function(username, email, password, db, callback){
         //console.log(result.ops);
     });
 }
+
+const addRestaurant = function(restaurant, username, email, password, address, db, callback){
+    db.collection('users').insertOne({
+        username: username,
+        password: password,
+        email: email,
+        type : "manager",
+        restaurant : restaurant,
+        address: address
+    }, function(error, result){
+        if(error){
+            console.log("Unable to add User");
+            const error = "error";
+            callback(error);
+        }
+        else{
+            const success = "success";
+            callback(success);
+        }
+
+        //console.log(result.ops);
+    });
+}
+
 
 const loginUser = function(username, password, type,db){
     db.collection('users').findOne({
@@ -131,6 +156,7 @@ const getRestaurentFood = function(restaurent, db, callback){
 
 module.exports = {
     addCustomer: addCustomer,
+    addRestaurant: addRestaurant,
     loginUser: loginUser,
     addOrder: addOrder,
     updateOrders: updateOrders,

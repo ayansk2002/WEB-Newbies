@@ -10,8 +10,12 @@ server.use(express.urlencoded({
   extended: true
 }));
 
+
+
 // Calling the server-utilities.js file
 const utils = require('./src/utils/server-utilities.js');
+
+
 
 //setting database using mongoose module
 const dbname = "project"
@@ -24,13 +28,22 @@ mongoose.connect("mongodb://localhost:27017/" + dbname,function(err){
     }
 });
 
+
+
 // Serving up HTML,CSS and Js static content
 const path = require('path');
 const dirPath = path.join(__dirname, '/public');
 server.use(express.static(dirPath))
 
+
+
+
 // Configuring the Server to use hbs Template Engine
 server.set('view engine', 'hbs');
+
+
+
+
 
 // Configuring the Server to serve dynamic HTML Pages
 server.get('/', function(request, response){
@@ -43,6 +56,10 @@ server.get("/login",function(request,response){
 
 server.get("/signup",function(request,response){
     response.render(__dirname + '/views/signupPage');
+});
+
+server.get('/add_restaurant',function(request, response){
+    response.render(__dirname + '/views/add_restaurant');    
 });
 
 server.get('/manager', function(request, response){
@@ -67,17 +84,55 @@ server.post('/signup',function(request,response){
     const name = request.body.name;
     const email = request.body.email;
     const password = request.body.password;
-    console.log(name + "added in user collection as a customer");
-    utils.addCustomer(name, email, password, db, function(status){
-        if (status === "success"){
-            response.render(__dirname + '/views/signupSuccess');
-        }
-        else{
-            response.render(__dirname + "/views/errorPage");
-        }
-    });
+    const pw_confirmation = request.body.password_check;
+    if( password == pw_confirmation){
+        utils.addCustomer(name, email, password, db, function(status){
+            if (status === "success"){
+                console.log(name + "added in user collection as a customer");
+                response.render(__dirname + '/views/signupSuccess');
+            }
+            else{
+                response.render(__dirname + "/views/errorPage");
+            }
+        });
+    }
+
+    else{
+        response.render(__dirname + '/views/pwError_suPage');
+    }
+    
     
 });
+
+
+
+server.post('/add_restaurant',function(request,response){
+    const restaurant = request.body.restaurant;
+    const manager = request.body.manager;
+    const email = request.body.email;
+    const password = request.body.password;
+    const pw_confirmation = request.body.password_check;
+    const address = request.body.address;
+    if( password == pw_confirmation){
+        utils.addRestaurant(restaurant, username, email, password, address, db, function(status){
+            if (status === "success"){
+                console.log(manager + "added in user collection as a customer");
+                response.render(__dirname + '/views/signupSuccess');
+            }
+            else{
+                response.render(__dirname + "/views/errorPage");
+            }
+        });
+    }
+
+    else{
+        response.render(__dirname + '/views/pwError_addRes');
+    }
+    
+});
+
+
+
 
 // Setting up JSON HTTP Endpoints
 server.get('/loginUser', function(request, response){
@@ -148,10 +203,11 @@ server.get('/getFoodData', function(request, response){
 server.get('/success',function(request, response){
     response.render(__dirname + '/views/signupSuccess');    
 });
-
-server.get('/add_restaurant',function(request, response){
-    response.render(__dirname + '/views/add_restaurant');    
+server.get('/pwsuerr',function(request, response){
+    response.render(__dirname + '/views/pwError_suPage');    
 });
+
+
 
 
 
