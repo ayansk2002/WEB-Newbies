@@ -1,12 +1,19 @@
 // Requiring express npm module
 const express = require('express');
 const server = express();
+const mongoose = require("mongoose");
+
+
+//support parsing of application/ form data
+server.use(express.json());
+server.use(express.urlencoded({
+  extended: true
+}));
 
 // Calling the server-utilities.js file
 const utils = require('./src/utils/server-utilities.js');
 
 //setting database using mongoose module
-const mongoose = require("mongoose");
 const dbname = "project"
 mongoose.connect("mongodb://localhost:27017/" + dbname,function(err){
     if(err){
@@ -26,11 +33,23 @@ server.use(express.static(dirPath))
 server.set('view engine', 'hbs');
 
 // Configuring the Server to serve dynamic HTML Pages
-server.get('/manager.hbs', function(request, response){
+server.get('/', function(request, response){
+    response.render(__dirname + '/views/frontpage');
+});
+
+server.get("/login",function(request,response){
+    response.render(__dirname + '/views/loginpage');
+});
+
+server.get("/signup",function(request,response){
+    response.render(__dirname + '/views/signupPage');
+});
+
+server.get('/manager', function(request, response){
     response.render(__dirname + '/views/manager');
 });
 
-server.get('/food_items_manager.hbs', function(request, response){
+server.get('/food_items_manager', function(request, response){
     response.render(__dirname + '/views/food_items_manager');
 });
 
@@ -42,14 +61,27 @@ server.get('/test', function(request, response){
     response.render(__dirname + '/views/test');
 })
 
-
-// Setting up JSON HTTP Endpoints
-server.get('/signup', function(request, response){
-    utils.addUser(request.query.username, request.query.email, request.query.password, request.query.type, request.query.restaurent
-        ,db);
-    response.send("[+] User Added");
+server.get('/success',function(request, response){
+    response.render(__dirname + '/views/signupSuccess');    
 });
 
+server.post('/signup',function(request,response){
+    const name = request.body.name;
+    const email = request.body.email;
+    const password = request.body.password;
+    console.log(name + "added in user collection as a customer");
+    utils.addCustomer(name, email, password, db, function(status){
+        if (status === "success"){
+            response.render(__dirname + '/views/signupSuccess');
+        }
+        else{
+            response.render(__dirname + "/views/errorPage");
+        }
+    });
+    
+});
+
+// Setting up JSON HTTP Endpoints
 server.get('/loginUser', function(request, response){
     utils.loginUser(request.query.username, request.query.password, request.query.type, db);
     response.send("[+] Congrats you exist");
@@ -112,6 +144,8 @@ server.get('/getFoodData', function(request, response){
     });
     
 })
+
+
 
 
 // Starting the server at port 3000

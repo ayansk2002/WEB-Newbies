@@ -70,7 +70,7 @@ function modal(buttonsOpenModal, buttonCloseModal, removeElement, dontRemoveElem
 
     // Removing the FoodItem from Database if User selects Yes on Modal Window
     removeElement.addEventListener('click', function(event){
-        const foodName = parentElement.firstElementChild.firstElementChild.textContent;     //how accessed to foodname
+        const foodName = parentElement.firstElementChild.firstElementChild.textContent;     
         const restaurent = document.querySelector('#heading').firstElementChild.firstElementChild.textContent;
         //console.log("FoodName: ", foodName);
         removeFoodFromDatabase(foodName, restaurent);

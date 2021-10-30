@@ -1,0 +1,167 @@
+.bg{ 
+    background: url(/images/frontpageBG.PNG), linear-gradient(128.7deg, #FF2103 8.69%, #FF9900 96.84%);
+    border: 1px solid #fd521e;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+body { 
+    left: 0px;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+
+}
+header{
+    width: 100vw;
+    height: 20vh;
+    position: relative;
+    align-items: center;
+}
+
+nav{
+    position: relative;
+    display: flex;
+    width: 305px;
+    text-align: end;
+    margin-right: 2vw;
+    height: 55px;
+    left: 70vw;
+    top: 4vh;
+}
+.highlight{
+    width: 85vw;
+    margin: auto;
+}
+#icon{
+    position: relative;
+    margin-top: 1vh;
+    margin-right: 0vw;
+    text-align: end;
+    padding-right: 7vw;
+    
+}
+
+#login{
+    width: 145px;
+    height: 55px;
+    margin-right: 5px;
+    background-color: transparent;
+    border-style: none;
+    border-radius: 50px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0.2px;
+
+    color: #FFFFFF;
+}
+
+#login:hover{
+    background-color: rgb(247, 134, 43);
+}
+#signup{
+    width: 145px;
+    height: 55px;
+    background: #FF7B31;
+    border-radius: 50px;
+    border-width: 4px;
+    border-style: outset;
+    border-color:#ff5f03;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #FFFFFF;
+}
+
+#signup:hover{
+    background-color: #ff0b03;
+}
+
+#welcome{
+    position: relative;
+    height: 1vh;
+    padding-left: 5vw;
+    top: 5vh;
+
+    font-family: Lucida Calligraphy;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 10vh;
+
+    text-align: left;
+    letter-spacing: 0.2px;
+
+    color: #FFFFFF;
+
+}
+
+#web_name{
+    position: relative;
+    margin-top: 7vh;
+    top: 5vh;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20vh;
+
+    text-align: center;
+    letter-spacing: 0.2px;
+
+    color: #FFFFFF;
+
+}
+
+footer{
+    position: absolute;
+    width: 100vw;
+    height: 15vh;
+    top: 100vh;
+}
+.fcontent{
+    position: absolute;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+}
+
+#footer{
+    position: absolute;
+    background-color: black;
+    opacity: 0.3;
+    top: 100vh;
+    width: 100vw;
+    height: 15vh;
+    left: 0px;
+}
+
+
+
+#logo{
+    position: relative;
+    margin-top: 3vw;
+    width: 5vw;
+    height: 4vw;
+    left: 5vw;
+    background: #FFFFFF;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #FF6F1E;
+}
+

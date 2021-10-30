@@ -2,16 +2,20 @@ const mongodb = require('mongodb');
 let foodAvailability = 0;
 let time = 0;
 
-const addUser = function(username, email, password, type, restaurent=null, db){
+const addCustomer = function(username, email, password, db, callback){
     db.collection('users').insertOne({
         username: username,
         password: password,
         email: email,
-        type: type,
-        restaurent: restaurent
     }, function(error, result){
         if(error){
-            return console.log("Unable to add User");
+            console.log("Unable to add User");
+            const error = "error";
+            callback(error);
+        }
+        else{
+            const success = "success";
+            callback(success);
         }
 
         //console.log(result.ops);
@@ -22,7 +26,8 @@ const loginUser = function(username, password, type,db){
     db.collection('users').findOne({
         username: username,
         password: password,
-        type: type
+        type: type,
+        restaurent: restaurent
     }, function(error, user){
         if (error){
             return console.log("[-] No Such User Exists");
@@ -125,7 +130,7 @@ const getRestaurentFood = function(restaurent, db, callback){
 }
 
 module.exports = {
-    addUser: addUser,
+    addCustomer: addCustomer,
     loginUser: loginUser,
     addOrder: addOrder,
     updateOrders: updateOrders,

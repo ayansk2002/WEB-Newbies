@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Lato:400,700');
+        @import url('https://fonts.googleapis.com/css?family=Acme');
+    </style>
+    <link rel="stylesheet" href="/css/loginPage.css">
+    <link rel="stylesheet" href="/css/loginPage_responsive.css">
+</head>
+<body>
+    <div id="bgi">   
+    </div>
+    <h1>Website</h1>
+    <div class="box" >
+        <div class="cmi">
+        <a href="/">
+        <img src="/images/lg_cm.png" alt="cross mark" style="height: 5vh;" ></a></div>
+        <br> 
+        <img src="/images/lg_MenuIcon.png" alt="mi" style="height: 4vh;"> 
+        <img src="/images/lg_dish_icon.png" alt="di" style="height: 4vh;"> 
+        <img src="/images/lg_fork_icon.png" alt="fi" style="height: 4vh;"><br>
+        <hr>
+        <img src="/images/lg_emoji.png" alt="emoji"style="height: 7vh;"><br>
+        <img src="/images/lg_ItsTimeToEat.png" alt="time to eat" style="height: 1.5vh;"><br><br>
+        <form action="/login" method="/post" >
+        <label for="email">Email</label>
+        <input name="email" id="email" type="email"><br>
+        <label for="password">Password</label>
+        <input name="password" id="password" type="password">
+        <br>
+        <select name="type" id="option">
+            <option value="Customer">Customer</option>
+            <option value="Staff">Staff</option>
+            <option value="Manager">Manager</option>
+        </select>
+        <input id="btn" type="submit" value="Log In" >
+        </form>
+        <b>No account?</b>  <a href="/signup"><b style="color:rgba(255, 123, 49, 1); font-weight: bold;">Sign up</b></a> 
+</div>
+</body>
+</html>
