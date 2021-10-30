@@ -26,8 +26,8 @@ const addCustomer = function(username, email, password, db, callback){
 const addRestaurant = function(restaurant, username, email, password, address, db, callback){
     db.collection('users').insertOne({
         username: username,
-        password: password,
         email: email,
+        password: password,
         type : "manager",
         restaurant : restaurant,
         address: address

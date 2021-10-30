@@ -18,7 +18,7 @@ const utils = require('./src/utils/server-utilities.js');
 
 
 //setting database using mongoose module
-const dbname = "project"
+const dbname = "Project"
 mongoose.connect("mongodb://localhost:27017/" + dbname,function(err){
     if(err){
         console.log(err);
@@ -114,10 +114,10 @@ server.post('/add_restaurant',function(request,response){
     const pw_confirmation = request.body.password_check;
     const address = request.body.address;
     if( password == pw_confirmation){
-        utils.addRestaurant(restaurant, username, email, password, address, db, function(status){
+        utils.addRestaurant(restaurant, manager, email, password, address, db, function(status){
             if (status === "success"){
                 console.log(manager + "added in user collection as a customer");
-                response.render(__dirname + '/views/signupSuccess');
+                response.render(__dirname + '/views/addRestaurantSuccess');
             }
             else{
                 response.render(__dirname + "/views/errorPage");
@@ -126,7 +126,7 @@ server.post('/add_restaurant',function(request,response){
     }
 
     else{
-        response.render(__dirname + '/views/pwError_addRes');
+        response.render(__dirname + '/views/pwError_add_Res');
     }
     
 });
@@ -200,13 +200,15 @@ server.get('/getFoodData', function(request, response){
 
 
 //page checking paths
-server.get('/success',function(request, response){
-    response.render(__dirname + '/views/signupSuccess');    
-});
-server.get('/pwsuerr',function(request, response){
-    response.render(__dirname + '/views/pwError_suPage');    
-});
-
+// server.get('/success',function(request, response){
+//     response.render(__dirname + '/views/signupSuccess');    
+// });
+// server.get('/pwsuerr',function(request, response){
+//     response.render(__dirname + '/views/pwError_suPage');    
+// });
+// server.get('/addRestaurantSuccess',function(request, response){
+//     response.render(__dirname + '/views/addRestaurantSuccess');    
+// });
 
 
 

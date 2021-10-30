@@ -34,7 +34,7 @@ function createFoodHtmlContent(foodItemsData, foodList, stateOfModalButtons){
             <span class="time_edit">${foodItemsData.timeToPreapare} min</span> <a href="#"><div class="edit"><span class="edit_text">EDIT</span></div></a>
         </div>
     </div>`;
-    foodList.insertAdjacentHTML("afterbegin", html);            ////afterbegin
+    foodList.insertAdjacentHTML("afterbegin", html);
     
 }
 
@@ -70,7 +70,7 @@ function modal(buttonsOpenModal, buttonCloseModal, removeElement, dontRemoveElem
 
     // Removing the FoodItem from Database if User selects Yes on Modal Window
     removeElement.addEventListener('click', function(event){
-        const foodName = parentElement.firstElementChild.firstElementChild.textContent;     
+        const foodName = parentElement.firstElementChild.firstElementChild.textContent;
         const restaurent = document.querySelector('#heading').firstElementChild.firstElementChild.textContent;
         //console.log("FoodName: ", foodName);
         removeFoodFromDatabase(foodName, restaurent);
