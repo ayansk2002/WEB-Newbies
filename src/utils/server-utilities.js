@@ -1,65 +1,221 @@
 const mongodb = require('mongodb');
+const bcrypt = require("bcryptjs");
 let foodAvailability = 0;
 let time = 0;
 
-const addCustomer = function(username, email, password, db, callback){
-    db.collection('users').insertOne({
-        username: username,
+
+//adding new customer in database
+const addCustomer = function(username, email, password, db, callback){    
+    
+    db.collection('users').findOne({        //checking presence of provided email with provided type
         email: email,
-        password: password, 
-        type : "customer"
-    }, function(error, result){
-        if(error){
-            console.log("Unable to add User");
-            const error = "error";
-            callback(error);
-        }
-        else{
-            const success = "success";
-            callback(success);
+        type: "customer",
+    }, function(error, user){           
+        if (error){                 //error while accessing database
+            console.log("error while accessing");
+            var status = "error";
+            var problem = "err";
+            callback(status, problem);
         }
 
-        //console.log(result.ops);
-    });
+        else if(user != null){              //if a customer already exist with the provided email 
+            console.log("Customer " + user.name + " already present in database .");
+            var status = "exist";
+            var problem = "A customer is already registered with the provided email address.<br> <h3><a href='/signup'>Sign up</a> with another email.</h3>";
+            callback(status, problem);
+        }
+
+
+
+        //making new entry in database if no customer is registered with this email
+        else if(user == null){       
+            
+             //hashing password
+            const saltRounds = 10
+            bcrypt.genSalt(saltRounds, function (saltError, salt) {
+                if (saltError) {
+                    var status = "error";
+                    var problem = "err";
+                    callback(status, problem);
+                    throw saltError;
+                    
+                } 
+                else {
+                    bcrypt.hash(password, salt, function(hashError, hashed_password) {
+                        if (hashError) {
+                            var status = "error";
+                            var problem = "err";
+                            callback(status, problem);
+                            throw hashError;
+                        } 
+                        else {
+                                        
+
+                            //storing customer in user collection with hashed password
+                            db.collection('users').insertOne({
+                                username: username,
+                                email: email,
+                                password: hashed_password, 
+                                type : "customer"
+                            }, function(error, user){
+                                if(error){
+                                    console.log("Unable to add User");
+                                    var status = "error";
+                                    var problem = "err";
+                                    callback(status, problem);
+                                }
+                                else{
+                                    const success = "success";
+                                    console.log(user);
+                                    callback(success);
+                                }
+                        
+                            });
+                        }
+                    })
+                }
+            })
+        }          
+    }); 
+    
 }
 
+
+//adding new restaurant in database
 const addRestaurant = function(restaurant, username, email, password, address, db, callback){
-    db.collection('users').insertOne({
-        username: username,
+
+    db.collection('users').findOne({        //checking presence of provided email with provided type
         email: email,
-        password: password,
-        type : "manager",
-        restaurant : restaurant,
-        address: address
-    }, function(error, result){
-        if(error){
-            console.log("Unable to add User");
-            const error = "error";
-            callback(error);
-        }
-        else{
-            const success = "success";
-            callback(success);
+        type: "manager",
+    }, function(error, user){           
+        if (error){                 //error while accessing database
+            console.log("error while accessing");
+            var status = "error";
+            var problem = "err";
+            callback(status, problem);
         }
 
-        //console.log(result.ops);
-    });
+        else if(user != null){              //if a restaurant already exist with the provided email 
+            console.log( "Restaurant " + user.restaurant + " already present in database.");
+            var status = "exist";
+            var problem = "A restaurant is already registered with the provided email address.<br> <h3><a href='/add_restaurant'>Click here</a> to add with another email.</h3>";
+            callback(status, problem);
+        }
+
+
+
+        //making new entry in database if no restaurant registered with this email
+        else if(user == null){       
+            
+             //hashing a password
+            const saltRounds = 10
+            bcrypt.genSalt(saltRounds, function (saltError, salt) {
+            if (saltError) {
+                var status = "error";
+                var problem = "err";
+                callback(status, problem);
+                throw saltError
+            } 
+            else {
+                bcrypt.hash(password, salt, function(hashError, hashed_password) {
+                if (hashError) {
+                    var status = "error";
+                    var problem = "err";
+                    callback(status, problem);
+                    throw hashError;
+                } 
+                else {
+
+                    //storing restaurant with manager details and hashed password in user collections
+                    db.collection('users').insertOne({
+                        username: username,
+                        email: email,
+                        password: hashed_password,
+                        type : "manager",
+                        restaurant : restaurant,
+                        address: address
+                    }, function(error, user){
+                        if(error){
+                            console.log("Unable to add User");
+                            var status = "error";
+                            var problem = "err";
+                            callback(status, problem);
+                        }
+                        else{
+                            const success = "success";
+                            console.log(user);
+                            callback(success, user);
+                        }
+                    });
+                }
+                })
+            }
+            })
+        }          
+    });      
+    
+    
 }
 
 
-const loginUser = function(username, password, type,db){
-    db.collection('users').findOne({
-        username: username,
-        password: password,
+//verifing user details while logging in
+const loginUser = function(email, password, type, db, callback){
+    
+    var hashed_password;        
+
+    db.collection('users').findOne({        //checking presence of provided email with provided type
+        email: email,
         type: type,
-        restaurent: restaurent
-    }, function(error, user){
-        if (error){
-            return console.log("[-] No Such User Exists");
+    }, function(error, user){           
+        if (error){                 //error while accessing database
+            console.log("error while accessing");
+            var status = "error";
+            var problem = "err";
+            callback(status, problem);
         }
 
-        //console.log(user);
+        else if(user == null){          //email with provided type not found in database
+            console.log("[-] No Such User Exists");
+            var status = "error";
+            if(type == "customer"){
+                var problem = "No customer with this email is signed up. <a href='/signup'>Click here</a> to sign up now.";
+            }
+
+            else if(type == "manager"){
+                var problem = "No manager with this email is signed up. <a href='/add_restaurant'>Click here</a> to add your restaurant now.";
+            }
+
+            else if(type == "staff"){
+                var problem = "No staff with this email is registered :( ";
+            }
+
+            callback(status, problem);
+        }
+        else{                                   //email with provided type found in database
+            hashed_password = user.password;
+
+            //decrypting hashed password
+            bcrypt.compare(password, hashed_password, function(error, isMatch) {
+                if (error) {                    //error while decrypting
+                    
+                    const status = "error";
+                    const problem = "err";
+                    callback(status, problem);
+                    throw error;
+                } 
+                else if (!isMatch) {                //decrypted successfully but didn't matched
+                    const status = "error";
+                    const problem = "Password doesn't matches.  <a href='/login'>Try again</a>";
+                    callback(status, problem);
+                } else {                           //decrypted password mached with provided password
+                    const status = "success";
+                    callback(status, user);
+                }
+                })
+        }
     })
+    
+    
 }
 
 const updateOrders = function(foodName, restaurent,db){

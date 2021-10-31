@@ -86,10 +86,13 @@ server.post('/signup',function(request,response){
     const password = request.body.password;
     const pw_confirmation = request.body.password_check;
     if( password == pw_confirmation){
-        utils.addCustomer(name, email, password, db, function(status){
+        utils.addCustomer(name, email, password, db, function(status, value){
             if (status === "success"){
-                console.log(name + "added in user collection as a customer");
+                console.log(name + " added in user collection as a customer");
                 response.render(__dirname + '/views/signupSuccess');
+            }
+            else if(status === "exist"){
+                response.send(value);
             }
             else{
                 response.render(__dirname + "/views/errorPage");
@@ -114,10 +117,13 @@ server.post('/add_restaurant',function(request,response){
     const pw_confirmation = request.body.password_check;
     const address = request.body.address;
     if( password == pw_confirmation){
-        utils.addRestaurant(restaurant, manager, email, password, address, db, function(status){
+        utils.addRestaurant(restaurant, manager, email, password, address, db, function(status, value){
             if (status === "success"){
                 console.log(manager + "added in user collection as a customer");
                 response.render(__dirname + '/views/addRestaurantSuccess');
+            }
+            else if(status === "exist"){
+                response.send(value);
             }
             else{
                 response.render(__dirname + "/views/errorPage");
@@ -130,6 +136,38 @@ server.post('/add_restaurant',function(request,response){
     }
     
 });
+
+
+
+server.post('/login',function(request,response){
+    const email = request.body.email;
+    const password = request.body.password; 
+    const type = request.body.type;
+    utils.loginUser(email, password, type, db, function(status, value){
+        if(status === "success"){ 
+            const user = value;
+            if(user.type === "customer"){
+                response.send("Hello " + user.username); 
+            }
+
+            else if(user.type === "manager" || user.type==="staff"){
+                response.send("Hello " + user.username + " of " + user.restaurant); 
+            }
+            
+        }
+        else{
+            if(value === "err"){
+                response.render(__dirname + "/views/errorPage");
+            }
+            else {
+                response.send(value);
+            }
+            
+        }
+    });
+});
+
+
 
 
 
@@ -200,15 +238,6 @@ server.get('/getFoodData', function(request, response){
 
 
 //page checking paths
-// server.get('/success',function(request, response){
-//     response.render(__dirname + '/views/signupSuccess');    
-// });
-// server.get('/pwsuerr',function(request, response){
-//     response.render(__dirname + '/views/pwError_suPage');    
-// });
-// server.get('/addRestaurantSuccess',function(request, response){
-//     response.render(__dirname + '/views/addRestaurantSuccess');    
-// });
 
 
 
