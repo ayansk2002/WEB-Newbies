@@ -52,7 +52,7 @@ function storeData(event){
         addToDatabase(foodName, time, imgSrc, price, tags, method, ingredients);
         localStorage.setItem("state", 1);
         console.log("Changing Location");
-        location.href = "http://localhost:3000/food_items_manager.hbs";
+        location.href = "http://localhost:3000/food_items_manager";
     }
     else{
         return console.log("Try Again");

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Lato:400,700');
+        @import url('https://fonts.googleapis.com/css?family=Acme');
+    </style>
+    <link rel="stylesheet" href="/css/signupPage.css">
+    <link rel="stylesheet" href="/css/signupPage_responsive.css">
+</head>
+<body>
+    <div id="bgi">   
+    </div>
+    <h1>Website</h1>
+    <div class="box" >
+        <div class="cmi">
+        <a href="/">
+        <img src="/images/signup/su_cm.png" alt="cross mark" style="height: 5vh;" ></a></div>
+        <br> 
+        <img src="/images/signup/su_MenuIcon.png" alt="mi" style="height: 4vh;"> 
+        <img src="/images/signup/su_dish_icon.png" alt="di" style="height: 4vh;"> 
+        <img src="/images/signup/su_fork_icon.png" alt="fi" style="height: 4vh;"><br>
+        <hr>
+        <img src="/images/signup/su_emoji.png" alt="emoji"style="height: 7vh;"><br>
+        <img src="/images/signup/LetsGetStarted.png" alt="Lets Get Started!" style="height: 2vh;"><br><br>
+        
+        <form action="/signup" method="post" >
+            <input type="text"  name="name" class="input" placeholder="Name" required autofocus><br>
+            <input type="email"  name="email" class="input" placeholder="Email" required><br>
+            <input type="password"  name="password" class="input" placeholder="Password" required><br>
+            <input type="password"  name="password_check" class="input" placeholder="Confirm Password" required><br><br>
+            <button id="btn" type="submit" >Sign Up</button>
+        </form>
+        
+        <b>Add New Restaurant?</b>  <a href="/add_restaurant"><b style="color:rgba(255, 123, 49, 1); font-weight: bold;">Click here</b></a> 
+</div>
+</body>
+</html>

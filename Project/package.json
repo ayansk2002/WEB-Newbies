@@ -1,5 +1,5 @@
 {
-  "name": "restaurent",
+  "name": "Project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
-    "hbs": "^4.0.1",
-    "mongodb": "^3.1.10",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "hbs": "^4.1.2",
+    "mongodb": "^4.1.3",
+    "mongoose": "^6.0.12",
     "nodemon": "^2.0.14"
   }
 }

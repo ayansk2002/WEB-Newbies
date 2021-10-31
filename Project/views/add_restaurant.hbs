@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Restaurant</title>
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Lato:400,700');
+        @import url('https://fonts.googleapis.com/css?family=Acme');
+    </style>
+    <link rel="stylesheet" href="/css/addRestaurant.css">
+    <link rel="stylesheet" href="/css/addRestaurant_responsive.css">
+</head>
+<body>
+    <div id="bgi">   
+    </div>
+    <h1>Website</h1>
+    <div class="box" >
+        <div class="cmi">
+        <a href="/">
+        <img src="/images/addRestaurant/su_cm.png" alt="cross mark" style="height: 5vh;" ></a></div>
+        <br> 
+        <img src="/images/addRestaurant/su_MenuIcon.png" alt="mi" style="height: 4vh;"> 
+        <img src="/images/addRestaurant/su_dish_icon.png" alt="di" style="height: 4vh;"> 
+        <img src="/images/addRestaurant/su_fork_icon.png" alt="fi" style="height: 4vh;"><br>
+        <hr>
+        <img src="/images/addRestaurant/cap.png" alt="emoji"style="height: 7vh;"><br><br>
+        
+        <form action="/add_restaurant" method="post">
+            <input type="text"  name="restaurant" class="input" placeholder="Name of restaurant" required autofocus><br>
+            <input type="text"  name="manager" class="input" placeholder="Name of Manager/Owner" required ><br>
+            <input type="email"  name="email" class="input" placeholder="Email Address" required><br>
+            <input type="password"  name="password" class="input" placeholder="Password" required><br>
+            <input type="password"  name="password_check" class="input" placeholder="Confirm Password" required><br>
+            <input type="text"  name="address" class="input" placeholder="Address" required ><br><br>
+            <button id="btn" type="submit" >Add</button>
+        </form>
+</div>
+</body>
+</html>

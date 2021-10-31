@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Food Item</title>
+    <link rel="stylesheet" href="/css/basic.css">
+    <link rel="stylesheet" href="/css/link.css">
+</head>
+
+<style>
+    body{
+        overflow-x: hidden;
+    }
+
+    #main{
+        height: 140vh;
+        background-size: 100% 140vh;
+    }
+
+    body::-webkit-scrollbar{
+        width: 1vh;
+    }
+
+    body::-webkit-scrollbar-track{
+        background-color: #ffe7da;
+        border-radius: 1vh;
+    }
+
+    body::-webkit-scrollbar-thumb{
+        background-color: rgb(255, 153, 0);
+        border-radius: 1vh;
+    }
+
+
+    #heading{
+        width: 30vw;
+        height: 10vh;
+        position: relative;
+        top: 3.2vh;
+        left: 3vw;
+    }
+
+    #span-p2-one{
+        display: inline-block;
+        width: 25vw;
+        height: 8vh;
+        font-family: sans-serif;
+        font-size: 1.4vw;
+        color: red;
+    }
+
+    #item_name{
+        text-align: center;
+        color: red;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    .separation_line{
+        color: red;
+        border: 0.1vh solid red;
+        width: 90vw;
+        position: relative;
+        left: 5vw;
+    }
+
+    .container{
+        width: 78vw;
+        height: 105vh;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .containerC1{
+        width: 25vw;
+        height: 50vh;
+        background-color: lightgreen;
+    }
+
+    #foodItemImage{
+        display: inline-block;
+        width: 25vw;
+        height: 50vh;
+    }
+
+    .containerC2{
+        width: 45vw;
+        height: 50vh;
+        border-top: 0.3vh solid red;
+        border-bottom: 0.3vh solid red;
+        border-left: 0.2vw solid red;
+        border-right: 0.2vw solid red;
+
+    }
+
+    #foodItemReview{
+        text-align: center;
+        color: red;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    #reviewSeparationLine{
+        width: 15vw;
+        background-color: red;
+        position: relative;
+        left: 15vw;
+        
+    }
+
+    #allReviews{
+        overflow-y: scroll;
+        width: 40vw;
+        height: 40vh;
+        margin: 2vh auto;
+    }
+
+    #allReviews::-webkit-scrollbar{
+        width: 1vh;
+    }
+
+    #allReviews::-webkit-scrollbar-track{
+        background-color: #ffe7da;
+        border-radius: 1vh;
+    }
+
+    #allReviews::-webkit-scrollbar-thumb{
+        background-color: rgb(255, 153, 0);
+        border-radius: 1vh;
+    }
+
+    #customerReview{
+        width: 37vw;
+        height: 10vh;
+        margin: 0 auto;
+        margin-top: 1vh;
+        border-top: 0.3vh solid red;
+        border-bottom: 0.3vh solid red;
+        border-left: 0.2vw solid red;
+        border-right: 0.2vw solid red;
+    }
+
+    #customerName{
+        margin-left: 0.8vw;
+        font-family: sans-serif;
+        color: lightcoral;
+    }
+
+    #reviewGivenByCustomer{
+        color: red;
+    }
+
+    .foodDetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        background-color: rgb(248, 149, 95, 0.6);
+    }
+
+    .foodDetailBox{
+        width: 20vw;
+        height: 5vh;
+        font-size: 4vh;
+        font-weight: bold;
+        color: red;
+    }    
+
+    .foodIngredients{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .foodIngredientsBox{
+        height: 20vh;
+        width: 42vw;
+    }
+
+    #ingredients{
+        margin-left: 3vw;
+        color: lightcoral;
+        text-decoration: underline;
+    }
+
+    .foodIngredientsStyle{
+        color: red;
+    }
+
+    #method{
+        margin-left: 3vw;
+        color: lightcoral;
+        text-decoration: underline;
+    }
+
+</style>
+
+<body>
+    <div id="header">
+        <div id="logo"></div>
+        <h1 id ="website-name">Website</h3>
+        <h1 id="customer-name">Hello Mr. Name</h1>
+    </div>
+
+    <div id="main">
+        <div class="buttons grp1"><span class = "span-button-one"><a>Home</a></span></div>
+        <div class="buttons grp1"><span class = "span-button-one"><a>About</a></span></div>
+        <div class="buttons grp2"><span class = "span-button-one"><a>Profile</a></span></div>
+        <div class="buttons grp2"><span class = "span-button-one"><a>Logout</a></span></div>
+        <hr id = "first-break">
+        <div id="heading">
+            <span id="span-p2-one"><span>Restaurent's Name</span> / <small>Item Name</small></span>
+        </div>
+        <h1 id="item_name">Item's Name</h1>
+
+        <hr class="separation_line">
+        <hr class="separation_line">
+        <br>
+
+        <div class="container">
+            <div class="containerC1"><img src="" alt="Image of Food Item" id="foodItemImage"></div>
+            <div class="containerC2">
+                <h1 id="foodItemReview">Reviews</h1>
+                <hr id="reviewSeparationLine">
+                <div id="allReviews">
+                    <div id="customerReview">
+                        <span id="customerName">Customer -1: </span>
+                        <span id="reviewGivenByCustomer"> This food is very tasty😋</span> {{!--Add Line Breaks to reviews--}}
+                    </div>
+                </div>
+            </div>
+            <div class="containerC1 foodDetails"></div>
+            <div class="containerC2 foodIngredients"></div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p id = "first-para"><span id="span-one">Website Name</span></p>
+        <p id = "second-para">About</p>
+        <hr id = "second-break">
+        <p id="third-para"><span>Copyright &copy; website name. All rights reserved</span></p>
+    </div>
+    <script src="/js/edit_food_item.js"></script>
+</body>
+</html>
