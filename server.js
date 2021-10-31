@@ -79,6 +79,12 @@ server.get('/test', function(request, response){
 })
 
 
+server.get('/editFoodItem', function(request, response){
+    response.render(__dirname + '/views/edit_food_item');
+});
+
+
+
 
 server.post('/signup',function(request,response){
     const name = request.body.name;
@@ -227,6 +233,12 @@ server.get('/deleteItem', function(request, response){
     utils.deleteFoodItem(request.query.foodName, request.query.restaurent, db);
     response.send("[-] Food Deleted");
 });
+
+server.get('/foodDetails', function(request, response){
+    utils.extractFoodDetails(request.query.foodName, request.query.restaurent, db, function(foodData){
+        response.send(foodData);
+    });
+})
 
 // HTTP Endpoint to get Restaurent's Food Data
 server.get('/getFoodData', function(request, response){

@@ -310,6 +310,19 @@ const getRestaurentFood = function(restaurent, db, callback){
     });
 }
 
+const extractFoodDetails = function(foodName, restaurent, db, callback){
+    db.collection('catalog').findOne({
+        foodName: foodName,
+        restaurent: restaurent
+    }, function(error, foodData){
+        if(error){
+            return console.log('Unable To Fetch FoodDetails');
+        }
+
+        callback(foodData)
+    })
+}
+
 module.exports = {
     addCustomer: addCustomer,
     addRestaurant: addRestaurant,
@@ -318,5 +331,6 @@ module.exports = {
     updateOrders: updateOrders,
     addFood: addFood,
     deleteFoodItem: deleteFoodItem,
-    getRestaurentFood: getRestaurentFood
+    getRestaurentFood: getRestaurentFood,
+    extractFoodDetails: extractFoodDetails
 }
