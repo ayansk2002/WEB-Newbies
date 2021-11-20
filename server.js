@@ -43,8 +43,6 @@ server.set('view engine', 'hbs');
 
 
 
-
-
 // Configuring the Server to serve dynamic HTML Pages
 server.get('/', function(request, response){
     response.render(__dirname + '/views/frontpage');
@@ -66,12 +64,24 @@ server.get('/manager', function(request, response){
     response.render(__dirname + '/views/manager');
 });
 
+server.get('/staff', function(request, response){
+    response.render(__dirname + '/views/staff');
+});
+
 server.get('/food_items_manager', function(request, response){
     response.render(__dirname + '/views/food_items_manager');
 });
 
 server.get('/addItem', function(request, response){
     response.render(__dirname + '/views/add_food_item');
+})
+
+server.get('/addStaff', function(request, response){
+    response.render(__dirname + '/views/add_staff');
+})
+
+server.get('/editFood', function(request, response){
+    response.render(__dirname + '/views/edit_food');
 })
 
 server.get('/test', function(request, response){

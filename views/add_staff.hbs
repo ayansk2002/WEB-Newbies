@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Food Item Form</title>
+    <title>Add Staff Form</title>
     <style>
         @import url('http://fonts.googleapis.com/css?family=Lato:400,700');
         @import url('https://fonts.googleapis.com/css?family=Acme');
         @import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;500&display=swap');
     </style>
     <link rel="stylesheet" href="/css/basic.css">
-    <link rel="stylesheet" href="/css/add_food_item.css">
+    <link rel="stylesheet" href="/css/add_staff.css">
     
 </head>
 
@@ -29,26 +29,19 @@
         <div class="buttons grp2"><span class = "span-button-one"><a>Logout</a></span></div>
         <hr id = "first-break">
         <div id="heading">
-            <span id="span-p2-one"><span>Restaurent's Name</span> / <small>Add Food</small></span>
+            <span id="span-p2-one"><span>Restaurent's Name</span> / <small>Add Staff</small></span>
         </div>
-        <h1 id="heading2">Add New Food</h1>
+        <h1 id="heading2">Add New Staff</h1>
         <div id = "add_item">
             <form>
                 <img src="/images/form_image.PNG" alt="form_image">
-                <input type="text" placeholder="Name of Food" name="food_name" id="name" required autofocus>
+                <input type="text" placeholder="Name" name="Staff_name" id="name" required autofocus>
                 <br>
-                <input type="text" placeholder="Price" name="price" id="price" required>
+                <input type="email" placeholder="Email" name="email" id="email" required>
                 <br>
-                <input type="text" placeholder="Time" name="time" id="time" required>
+                <input type="password" placeholder="Password" name="password" id="password" required>
                 <br>
-                <input type="text" placeholder="Ingredients" name="ingredients" id="ingredients" required>
-                <br>
-                <input type="text" placeholder="Method" name="method" id="method" required>
-                <br>
-                <input type="text" placeholder="Tags" name="tags" id="tags" required>
-                <br>
-                <input type="text" placeholder="Image-Location" name="image-location" id="img-src" required>
-                <a href="/foodCatalog">
+                <a href="#">
                     <div id="add_button">
                         <span id="span_add">ADD</span>
                     </div>

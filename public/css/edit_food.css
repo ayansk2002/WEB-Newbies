@@ -68,8 +68,8 @@ input {
   width: 15vw;
 }
 
-#add_button {
-  background-color: red;
+#edit_button {
+  background: rgba(255, 33, 3, 0.85);
   color: white;
   font-family: sans-serif;
   width: 6vw;
@@ -101,4 +101,8 @@ a:hover {
 a:active {
   text-decoration: none;
   color: darkmagenta;
+}
+
+#edit_button:hover {
+  background-color: red;
 }
