@@ -27,8 +27,8 @@ function removeFoodFromDatabase(foodName, restaurent){
 function createFoodHtmlContent(foodItemsData, foodList){
     let imgLocation = "/images/" + foodItemsData.imageUrl; 
     let html = `<div class="food_items">
-        <div class="food_item_heading"><span class="foodName">${foodItemsData.foodName}</span><span class = "item_span">&#x274c</span></div>
-        <div class="food_item_img"><img src=${imgLocation} alt=${foodItemsData.foodName} class="image"></div>
+        <div class="food_item_heading"><span class="foodName">${foodItemsData.foodName}</span><span class = "item_span">x</span></div>
+        <div class="food_item_img"><img class="food_img" src=${imgLocation} alt=${foodItemsData.foodName} class="image"></div>
         <div class="food_item_price">
             <span class="price">&#8377 ${foodItemsData.price}</span>
             <span class="time_edit">${foodItemsData.timeToPreapare} min</span> <a href="/editFoodItem" class="editButton"><div class="edit"><span class="edit_text">EDIT</span></div></a>

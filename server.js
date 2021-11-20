@@ -56,7 +56,7 @@ server.get("/signup",function(request,response){
     response.render(__dirname + '/views/signupPage');
 });
 
-server.get('/add_restaurant',function(request, response){
+server.get('/addRestaurant',function(request, response){
     response.render(__dirname + '/views/add_restaurant');    
 });
 

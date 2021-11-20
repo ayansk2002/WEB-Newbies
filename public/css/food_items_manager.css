@@ -18,7 +18,7 @@
 #food-list {
   width: 65vw;
   height: 57vh;
-  background-color: rgba(241, 184, 169, 0.911);
+  background-color: rgba(243, 155, 104, 0.425);
   margin-left: 18vw;
   display: flex;
   flex-wrap: wrap;
@@ -59,6 +59,7 @@
   text-align: center;
   color: white;
   font-size: large;
+  font-family: "Lato", sans-serif;
   border-radius: 1.4vw;
   line-height: 4.8vh;
 }
@@ -68,25 +69,32 @@
 }
 
 .food_item_heading {
-  background-color: red;
+  background-color: #f24e1e;
+  align-items: center;
   font-family: "Arial Narrow", Arial, sans-serif;
-  font-size: 1.5vw;
+  font-size: 25px;
   color: white;
   width: 16.1vw;
   height: 5vh;
+  display: flex;
   margin: 0 auto;
   margin-top: 2vh;
   line-height: 4.7vh;
 }
 
 .food_item_img {
-  background-color: yellow;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
   width: 16vw;
-  height: 15vh;
   margin: 0 auto;
   border: 0.1vh solid red;
 }
-
+.food_img {
+  max-height: 15vh;
+  max-width: 16vw;
+  object-fit: contain;
+}
 .food_item_price {
   width: 16.1vw;
   height: 4vh;
@@ -106,29 +114,27 @@
   display: inline-block;
   color: white;
   font-family: sans-serif;
-  background-color: red;
+  background-color: #f24e1e;
   position: relative;
   left: 6.5vw;
-  width: 3.5vw;
+  border-radius: 5%;
   text-align: center;
   height: 4vh;
-  width: 3.8vw;
+  width: 4.8vw;
 }
 
 .item_span {
-  display: inline-block;
-  position: relative;
-  left: 9.8vw;
-  cursor: pointer;
-  font-size: 1vw;
-  color: white;
-  border: 0.1vw solid white;
-  border-radius: 70%;
-  width: 1.5vw;
+  width: 3vh;
+  height: 3vh;
+  line-height: 18px;
+  border-radius: 100%;
   text-align: center;
+  font-size: 20px;
+  position: relative;
 }
 
 .item_span:hover {
+  color: red;
   background-color: white;
 }
 
@@ -205,6 +211,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   position: relative;
+  width: 85%;
   left: 1vw;
 }
 

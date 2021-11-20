@@ -22,6 +22,7 @@ function createFoodDetailHtml(foodData){
 
     const foodIngredients = document.querySelector('.foodIngredients');
     foodIngredients.insertAdjacentHTML("afterbegin", ingredientsAndMethod);
+    
 }
 
 function getFoodDetailsFromDatabase(foodName, restaurent){
