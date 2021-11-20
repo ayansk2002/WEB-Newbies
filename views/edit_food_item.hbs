@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Food Item</title>
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Lato:400,700');
+        @import url('https://fonts.googleapis.com/css?family=Acme');
+        @import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;500&display=swap');
+    </style>
     <link rel="stylesheet" href="/css/basic.css">
     <link rel="stylesheet" href="/css/link.css">
     <link rel="stylesheet" href="/css/edit_food_item.css">
@@ -15,10 +20,11 @@
         <div id="logo"></div>
         <h1 id ="website-name">Website</h3>
         <h1 id="customer-name">Hello Mr. Name</h1>
+        <img class="smiley" src="/images/smiley.png" alt="mi">
     </div>
 
     <div id="main">
-        <div class="buttons grp1"><span class = "span-button-one"><a>Home</a></span></div>
+        <div class="button-home grp1 home"><span class = "span-button-home"><img src="/images/home_icon.png" alt="hi" style="height: 2.5vh; width: 1.5vw; margin-left: 0.4vw; margin-right: 4px; display: inline-block;"><a>Home</a></span></div>
         <div class="buttons grp1"><span class = "span-button-one"><a>About</a></span></div>
         <div class="buttons grp2"><span class = "span-button-one"><a>Profile</a></span></div>
         <div class="buttons grp2"><span class = "span-button-one"><a>Logout</a></span></div>
@@ -46,7 +52,8 @@
             </div>
             <div class="containerC1 foodDetails"></div>
             <div class="containerC2 foodIngredients"></div>
-        </div>
+        </div><br>
+            <button id="btn" >EDIT</button>
     </div>
 
     <div id="footer">

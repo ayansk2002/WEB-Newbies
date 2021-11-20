@@ -7,20 +7,6 @@ body {
   background-size: 100% 140vh;
 }
 
-body::-webkit-scrollbar {
-  width: 1vh;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #ffe7da;
-  border-radius: 1vh;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: rgb(255, 153, 0);
-  border-radius: 1vh;
-}
-
 #heading {
   width: 30vw;
   height: 10vh;
@@ -148,6 +134,7 @@ body::-webkit-scrollbar-thumb {
 
 .foodDetailBox {
   width: 20vw;
+  margin-left: 10px;
   height: 5vh;
   font-size: 4vh;
   font-weight: bold;
@@ -179,4 +166,25 @@ body::-webkit-scrollbar-thumb {
   margin-left: 3vw;
   color: lightcoral;
   text-decoration: underline;
+}
+#btn {
+  background: rgba(11, 216, 11, 0.692);
+  width: 100px;
+  height: 40px;
+  border: 0;
+  display: block;
+  margin: 12px auto;
+  margin-top: -10px;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding: 0px, 5px;
+  color: white;
+  transition: 0.25s;
+  cursor: pointer;
+}
+#btn:hover {
+  background: #eb0c0cc7;
 }

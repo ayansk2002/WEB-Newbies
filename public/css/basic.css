@@ -135,11 +135,13 @@
   margin: 1vw;
 }
 .button-home {
+  transition: 0.25s;
   padding: 6px 2px 6px 2px;
   border-radius: 0.5em;
   text-align: center;
 }
 .buttons {
+  transition: 0.25s;
   padding: 3px 2px 3px 2px;
   border-radius: 0.5em;
   text-align: center;
@@ -202,4 +204,17 @@ a:active {
 }
 input {
   padding-left: 4px;
+}
+body::-webkit-scrollbar {
+  width: 1.3vh;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #ffe7da;
+  border-radius: 1vh;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 94, 0);
+  border-radius: 1vh;
 }
