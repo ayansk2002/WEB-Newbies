@@ -1,0 +1,369 @@
+#heading {
+  width: 30vw;
+  height: 10vh;
+  position: relative;
+  top: 3.2vh;
+  left: 3vw;
+}
+
+#span-p2-one {
+  display: inline-block;
+  width: 25vw;
+  height: 8vh;
+  font-family: sans-serif;
+  font-size: 1.4vw;
+  color: red;
+}
+
+#heading2 {
+  background-color: none;
+  color: #fe3f23;
+  height: 8vh;
+  margin-top: -4vh;
+  text-align: center;
+  line-height: 10vh;
+  font-weight: bold;
+  justify-content: center;
+  font-size: 2vw;
+  font-family: "Laila", sans-serif;
+}
+
+.MainContent {
+  display: flex;
+  height: 80%;
+}
+
+#RestrauntList {
+  box-sizing: border-box;
+  margin-left: 5%;
+  margin-top: 5vh;
+  width: 65%;
+  height: 100%;
+  padding: 2vh;
+  background-color: #ffe7da;
+  overflow-y: scroll;
+}
+
+#RestrauntList::-webkit-scrollbar {
+  width: 1vh;
+}
+
+#RestrauntList::-webkit-scrollbar-track {
+  background-color: #ffe7da;
+  border-radius: 18vh;
+}
+
+#RestrauntList::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 18vh;
+}
+
+.RestrauntName {
+  color: #fe3f23;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.RestrauntListEntry {
+  border: 1px solid #fe3f23;
+  border-radius: 5px;
+  height: 60%;
+  width: 95%;
+  margin-left: 3%;
+  margin-bottom: 2%;
+  margin-right: 5%;
+}
+
+.RestrauntListEntries {
+  overflow-x: scroll;
+  white-space: nowrap;
+  height: 80%;
+}
+
+.RestrauntListEntries::-webkit-scrollbar {
+  height: 0.5vw;
+}
+
+.RestrauntListEntries::-webkit-scrollbar-track {
+  background-color: #ffe7da;
+  border-radius: 18vw;
+}
+
+.RestrauntListEntries::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 18vw;
+}
+.RestrauntItem {
+  border: 1px solid #796d6b;
+  height: 90%;
+  width: 290px;
+  display: inline-flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+}
+
+.RestrauntItemHeading {
+  width: 90%;
+  margin-left: 3%;
+  color: white;
+  padding: 2%;
+  margin-top: 3%;
+  height: 12%;
+  background-color: #fe3f23;
+}
+
+.RestrauntItemImage {
+  width: 94%;
+  margin-left: 3%;
+  height: 55%;
+  margin-top: -5%;
+  background-color: aqua;
+}
+
+.RestrauntItemMenu {
+  display: inline;
+  margin-top: -5%;
+  width: 94%;
+  margin-left: 3%;
+  height: 15%;
+}
+
+.MenuComponents {
+  display: inline;
+  line-height: 30px;
+}
+.Price {
+  color: #fe3f23;
+  font-weight: 900;
+  margin-left: 8%;
+}
+.Time {
+  color: #796d6b;
+  margin-left: 10%;
+}
+.Minus {
+  object-fit: contain;
+  margin-left: 10%;
+  height: 2vh;
+}
+.Quantity {
+  color: white;
+  border: 1px solid #fe3f23;
+  background-color: #ffffff;
+}
+.Plus {
+  object-fit: contain;
+  height: 2vh;
+}
+.Add {
+  margin-left: 10%;
+  color: white;
+  background-color: #fe3f23;
+  border-radius: 10%;
+  padding: 1%;
+}
+
+#shoppingList {
+  /* box-sizing: border-box; */
+  margin-left: 3%;
+  margin-top: 5vh;
+  width: 40vh;
+  padding: 2vh;
+  background-color: #f8d7c8;
+  text-align: center;
+}
+
+.shoppingListTotal {
+  background-color: #fe3f23;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.ShoppingListTotalTitle {
+  border: 1px solid white;
+  width: 70%;
+  border-radius: 5px 0px 0px 5px;
+}
+.ShoppingListTotalAmount {
+  border: 1px solid white;
+  width: 30%;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.shoppingListTableHeadingDiv {
+  background-color: #fe3f23;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.HeadingA {
+  padding: 5px;
+  border-radius: 20px 0px 0px 0px;
+  border: 1px solid white;
+  width: 45%;
+}
+
+.HeadingB {
+  border: 1px solid white;
+  padding: 5px;
+  width: 20%;
+}
+
+.HeadingC {
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 0px 20px 0px 0px;
+  width: 35%;
+}
+
+.shoppingListTableMainDiv {
+  background-color: #ffffff;
+  max-height: 200px;
+  width: 100%;
+  border-radius: 0px 0px 20px 20px;
+  overflow-y: scroll;
+}
+
+.shoppingListTableMainDiv::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+.shoppingListTableMainDiv::-webkit-scrollbar-track {
+  background-color: #ffe7da;
+  border-radius: 18vw;
+}
+
+.shoppingListTableMainDiv::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 18vw;
+}
+.shoppingListTableDiv {
+  /* background-color: #ffffff; */
+  width: 100%;
+  /* height: 80%; */
+  display: flex;
+}
+
+.ItemA {
+  border: 1px solid #f8d7c8;
+  width: 10%;
+  padding: 5px;
+}
+
+.ItemB {
+  border: 1px solid #f8d7c8;
+  width: 34%;
+  padding: 5px;
+}
+
+.ItemC {
+  border: 1px solid #f8d7c8;
+  width: 21%;
+  padding: 5px;
+}
+
+.ItemD {
+  border: 1px solid #f8d7c8;
+  padding: 5px;
+  width: 35%;
+}
+
+/* table {
+  border: 1px solid #fe3f23;
+  background-color: #fe3f23;
+  table-layout: auto;
+  width: 100%;
+}
+
+th {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: #fe3f23;
+}
+
+td {
+  background-color: #ffffff;
+}
+
+.shoppingListTable {
+  border: 1px solid black;
+  width: 100%;
+} */
+
+.ItemDeleteButton {
+  background-color: #fe3f23;
+  border: 0px;
+  border-radius: 100%;
+  width: 15px;
+  color: #ffffff;
+}
+
+.ItemSubmitButton {
+  background-color: #fe3f23;
+  margin-top: 10px;
+  border: 0px;
+  border-radius: 10%;
+  padding: 5px 10px 5px 10px;
+  color: #ffffff;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.shoppingListTitle {
+  color: red;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  outline: none;
+  margin: 0 auto;
+  border: 0.2vw solid silver;
+  width: 15vw;
+}
+
+#add_button {
+  background-color: red;
+  color: white;
+  font-family: sans-serif;
+  width: 6vw;
+  height: 5vh;
+  margin: 0.8vh auto;
+  text-align: center;
+}
+
+#span_add {
+  display: inline-block;
+  margin-top: 0.8vh;
+  font-size: 3.1vh;
+}
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:active {
+  text-decoration: none;
+  color: darkmagenta;
+}

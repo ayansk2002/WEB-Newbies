@@ -96,6 +96,10 @@ server.get('/editFoodItem', function(request, response){
     response.render(__dirname + '/views/edit_food_item');
 });
 
+server.get('/restaurant', function(request, response){
+    response.render(__dirname + '/views/Restaurant');
+});
+
 
 
 
