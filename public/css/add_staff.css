@@ -34,7 +34,7 @@
   margin: 0 auto;
   width: 26vw;
   padding-bottom: 2vh;
-  background-color: #ffe7da;
+  background: rgba(255, 231, 218, 0.911);
 }
 
 #add_item {

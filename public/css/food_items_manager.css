@@ -19,7 +19,7 @@
   width: 65vw;
   height: 57vh;
   background-color: rgba(243, 155, 104, 0.425);
-  margin-left: 18vw;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

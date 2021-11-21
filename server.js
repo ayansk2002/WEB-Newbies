@@ -84,10 +84,13 @@ server.get('/editFood', function(request, response){
     response.render(__dirname + '/views/edit_food');
 })
 
-server.get('/test', function(request, response){
-    response.render(__dirname + '/views/test');
+server.get('/orders', function(request, response){
+    response.render(__dirname + '/views/orders');
 })
 
+server.get('/staffDetails', function(request, response){
+    response.render(__dirname + '/views/staff_details');
+})
 
 server.get('/editFoodItem', function(request, response){
     response.render(__dirname + '/views/edit_food_item');

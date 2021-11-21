@@ -1,0 +1,160 @@
+#head {
+  width: 30vw;
+  height: 10vh;
+  position: relative;
+  top: 3.2vh;
+  left: 3vw;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+a:active {
+  text-decoration: none;
+  color: darkmagenta;
+}
+
+.orders {
+  width: 65vw;
+  height: 57vh;
+  background: #faf3ecd8;
+  border: 1px solid #d67641;
+  box-sizing: border-box;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border: 0.1vh solid red;
+}
+
+.order-head {
+  width: 62vw;
+  margin-left: -1vw;
+  margin: auto;
+  margin-left: 1vw;
+  justify-content: space-evenly;
+  margin-top: 1.5vh;
+  height: 5.5vh;
+  display: flex;
+}
+
+.heading {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+  line-height: 5vh;
+  background: rgb(255, 102, 0);
+}
+
+.name {
+  width: 12.5vw;
+  text-align: center;
+}
+.status {
+  width: 8.5vw;
+  text-align: center;
+}
+.odrs {
+  width: 6.5vw;
+  text-align: center;
+}
+
+.order-list {
+  width: 63vw;
+  height: 47vh;
+  margin: auto;
+  margin-bottom: 1.5vh;
+  overflow-y: scroll;
+}
+
+.order-list::-webkit-scrollbar {
+  width: 1vh;
+}
+
+.order-list::-webkit-scrollbar-track {
+  background: none;
+  border-radius: 1vh;
+}
+
+.order-list::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 102, 0);
+  border-radius: 1vh;
+}
+
+.order-content {
+  width: 62vw;
+  margin: auto;
+  margin-left: 0vw;
+  justify-content: space-evenly;
+  margin-bottom: 2vh;
+  height: 5.5vh;
+  display: flex;
+}
+
+.odr-row {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  padding-top: 1vh;
+  color: rgb(255, 102, 0);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #fe8d4d;
+  box-sizing: border-box;
+}
+
+.status-button {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  border-radius: 24px;
+  border: none;
+  box-sizing: border-box;
+  width: 8.5vw;
+  text-align: center;
+  line-height: normal;
+}
+
+.done {
+  background: #00d179;
+}
+
+.in-process {
+  background: #fac919;
+}
+
+.start {
+  background: #fa1919;
+}
+
+.clock {
+  width: 8.5vw;
+  text-align: center;
+  line-height: normal;
+  color: #9c9999;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 3vh;
+  font-size: 15px;
+}
