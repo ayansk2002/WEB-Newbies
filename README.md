@@ -12,14 +12,14 @@
 
 ### Proposed Features :
 
-- Sign up/In feature for both customers and restaurants side
-- Catalog of Food available for restaurant for customers
-- Food ordering feature in the platform for customers
-- Feedback of the order by customers
-- Show food preparation time, notify when order is ready to customers
-- Send an alert when the order is ready by restaurants
-- Remove/add/edit an item from the catalog by restaurants
-- Realtime people count at restaurant
+- Sign up/In feature for both customers and restaurants side.
+- Catalog of Food available for restaurant for customers.
+- Food ordering feature in the platform for customers.
+- Feedback of the order by customers.
+- Show food preparation time, notify when order is ready to customers.
+- Send an alert when the order is ready by restaurants.
+- Remove/add/edit an item from the catalog by restaurants.
+- Realtime people count at restaurant.
 
 Inovation at the moment :  N/A
 
